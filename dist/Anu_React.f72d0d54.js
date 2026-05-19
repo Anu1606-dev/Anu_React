@@ -736,17 +736,77 @@ const jsxHeading = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
     columnNumber: 20
 }, undefined);
 console.log(jsxHeading);
-// for multiple lines JSX code, we need to wrap it in parentheses
-const jsxHeading2 = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-    className: "head",
-    children: "Hello React!!\u2764\uFE0F"
-}, void 0, false, {
+const elem = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+    children: [
+        jsxHeading,
+        "Magic!"
+    ]
+}, void 0, true, {
     fileName: "app.js",
     lineNumber: 8,
-    columnNumber: 22
+    columnNumber: 3
 }, undefined);
+// for multiple lines JSX code, we need to wrap it in parentheses
+const JSXHeading2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        className: "head",
+        children: "Hello React!!\u2764\uFE0F"
+    }, void 0, false, {
+        fileName: "app.js",
+        lineNumber: 16,
+        columnNumber: 3
+    }, undefined);
+_c = JSXHeading2;
 const root = (0, _clientDefault.default).createRoot(document.getElementById('root'));
-root.render(jsxHeading);
+const number = 100;
+// React Functional Component
+const HeadingComponent = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(JSXHeading2, {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 27,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(JSXHeading2, {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 28,
+                columnNumber: 5
+            }, undefined),
+            JSXHeading2(),
+            console.log("Anushka"),
+            number,
+            400,
+            "Hello React!!\u2764\uFE0F".toUpperCase(),
+            jsxHeading,
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                id: "container",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    children: "React Functional Component!!"
+                }, void 0, false, {
+                    fileName: "app.js",
+                    lineNumber: 36,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 35,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "app.js",
+        lineNumber: 26,
+        columnNumber: 3
+    }, undefined);
+_c1 = HeadingComponent;
+// rendering React Functional Component
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeadingComponent, {}, void 0, false, {
+    fileName: "app.js",
+    lineNumber: 41,
+    columnNumber: 13
+}, undefined));
+var _c, _c1;
+$RefreshReg$(_c, "JSXHeading2");
+$RefreshReg$(_c1, "HeadingComponent");
 
   $parcel$ReactRefreshHelpers$5fe5.postlude(module);
 } finally {
