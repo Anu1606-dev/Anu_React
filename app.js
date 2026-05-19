@@ -1,21 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const heading = React.createElement(
-  'h1',
-  { id: "heading01" },
-  'Hello from React!!❤️'
-);
+const jsxHeading = <h1 id="heading02">Hello React!!❤️</h1>;
+console.log(jsxHeading);
+
+// for multiple lines JSX code, we need to wrap it in parentheses
+const jsxHeading2 = (<h1 className="head">
+  Hello React!!❤️
+  </h1>);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(heading);
-
-const parent = React.createElement('div', { id: "parent" }, [
-    React.createElement('h1', { id: "heading01", key: "h1" }, 'Hello Everyone!!❤️'),
-    React.createElement('h2', { id: "heading02", key: "h2" }, 'Hello React!!❤️')
-]);
-
-console.log(parent);
-
-// This will replace previous render
-root.render(parent);
+root.render(jsxHeading);
