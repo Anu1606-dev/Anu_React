@@ -1,42 +1,71 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const jsxHeading = <h1 id="heading02">Hello React!!❤️</h1>;
-console.log(jsxHeading);
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img className="logo" src="https://static.vecteezy.com/system/resources/previews/011/401/427/non_2x/food-signal-online-food-ordering-logo-design-order-food-on-internet-restaurant-cafe-meals-delivery-online-free-vector.jpg" alt="logo" className="logo" />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  )
+}
 
-const elem = (
-  <span>
-    {jsxHeading}
-    Magic!
-  </span>
-);
+const RestaurantCard = (props) => {
+  console.log(props);
+  return (
+    <div className="res-card" style={{ backgroundColor: "#f0f0f0", borderRadius: "10px"}}>
+      <img 
+        className="res-logo"
+        src="https://b.zmtcdn.com/data/pictures/4/22201254/64f914acf0c3e0b7d8fae5fd85a1d33f_o2_featured_v2.jpg" 
+        alt="res-logo"/>
 
-// for multiple lines JSX code, we need to wrap it in parentheses
-const JSXHeading2 = () => (
-  <h1 className="head">
-    Hello React!!❤️
-  </h1>
-);
+      {/* Using props to display restaurant name and cuisine type */}
+      <h3>{props.resName}</h3> 
+      <h4>{props.cuisine}</h4> 
+        <p>⭐ 4.5 • 35 mins</p>
+        <p>₹400 for two</p>
+        <p>Barrackpore, Kolkata</p>
+    </div>
+  )
+}
+
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="res-container">
+        <RestaurantCard  // using the RestaurantCard component and passing props to it
+          resName="Dada Boudi Biriyani"
+          cuisine="Biriyani, Mughlai"
+        />
+        <RestaurantCard 
+          resName="Dominos Pizza"
+          cuisine="Italian, Pizza"     
+        />
+      </div>
+    </div>
+  )
+}
+
+const Applayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  )
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const number = 100;
 
-// React Functional Component
-const HeadingComponent = () => ( 
-  <div>
-    <JSXHeading2/> 
-    <JSXHeading2></JSXHeading2>
-    {JSXHeading2()}
-    {console.log("Anushka")}
-    {number}
-    {200+300-100}
-    {"Hello React!!❤️".toUpperCase()}
-    {jsxHeading}
-    <div id="container">
-        <h1>React Functional Component!!</h1>
-    </div>
-  </div>
-);
-// rendering React Functional Component
-root.render(<HeadingComponent/>); 
+root.render(<Applayout/>);
 

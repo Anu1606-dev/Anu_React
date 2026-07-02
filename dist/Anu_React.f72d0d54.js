@@ -727,86 +727,218 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
-const jsxHeading = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-    id: "heading02",
-    children: "Hello React!!\u2764\uFE0F"
-}, void 0, false, {
-    fileName: "app.js",
-    lineNumber: 4,
-    columnNumber: 20
-}, undefined);
-console.log(jsxHeading);
-const elem = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-    children: [
-        jsxHeading,
-        "Magic!"
-    ]
-}, void 0, true, {
-    fileName: "app.js",
-    lineNumber: 8,
-    columnNumber: 3
-}, undefined);
-// for multiple lines JSX code, we need to wrap it in parentheses
-const JSXHeading2 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        className: "head",
-        children: "Hello React!!\u2764\uFE0F"
-    }, void 0, false, {
-        fileName: "app.js",
-        lineNumber: 16,
-        columnNumber: 3
-    }, undefined);
-_c = JSXHeading2;
-const root = (0, _clientDefault.default).createRoot(document.getElementById('root'));
-const number = 100;
-// React Functional Component
-const HeadingComponent = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+const Header = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "header",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(JSXHeading2, {}, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 27,
-                columnNumber: 5
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(JSXHeading2, {}, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 28,
-                columnNumber: 5
-            }, undefined),
-            JSXHeading2(),
-            console.log("Anushka"),
-            number,
-            400,
-            "Hello React!!\u2764\uFE0F".toUpperCase(),
-            jsxHeading,
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                id: "container",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                    children: "React Functional Component!!"
+                className: "logo-container",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    className: "logo",
+                    src: "https://static.vecteezy.com/system/resources/previews/011/401/427/non_2x/food-signal-online-food-ordering-logo-design-order-food-on-internet-restaurant-cafe-meals-delivery-online-free-vector.jpg",
+                    alt: "logo",
+                    className: "logo"
                 }, void 0, false, {
                     fileName: "app.js",
-                    lineNumber: 36,
+                    lineNumber: 8,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 35,
-                columnNumber: 5
+                lineNumber: 7,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "nav-items",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Home"
+                        }, void 0, false, {
+                            fileName: "app.js",
+                            lineNumber: 12,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "About"
+                        }, void 0, false, {
+                            fileName: "app.js",
+                            lineNumber: 13,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Contact"
+                        }, void 0, false, {
+                            fileName: "app.js",
+                            lineNumber: 14,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Cart"
+                        }, void 0, false, {
+                            fileName: "app.js",
+                            lineNumber: 15,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "app.js",
+                    lineNumber: 11,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 10,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "app.js",
-        lineNumber: 26,
-        columnNumber: 3
+        lineNumber: 6,
+        columnNumber: 5
     }, undefined);
-_c1 = HeadingComponent;
-// rendering React Functional Component
-root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeadingComponent, {}, void 0, false, {
+};
+_c = Header;
+const RestaurantCard = (props)=>{
+    console.log(props);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "res-card",
+        style: {
+            backgroundColor: "#f0f0f0",
+            borderRadius: "10px"
+        },
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "res-logo",
+                src: "https://b.zmtcdn.com/data/pictures/4/22201254/64f914acf0c3e0b7d8fae5fd85a1d33f_o2_featured_v2.jpg",
+                alt: "res-logo"
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 26,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: props.resName
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 32,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: props.cuisine
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 33,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: "\u2B50 4.5 \u2022 35 mins"
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 34,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: "\u20B9400 for two"
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 35,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: "Barrackpore, Kolkata"
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 36,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "app.js",
+        lineNumber: 25,
+        columnNumber: 5
+    }, undefined);
+};
+_c1 = RestaurantCard;
+const Body = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "body",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "search",
+                children: "Search"
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 44,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "res-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard // using the RestaurantCard component and passing props to it
+                    , {
+                        resName: "Dada Boudi Biriyani",
+                        cuisine: "Biriyani, Mughlai"
+                    }, void 0, false, {
+                        fileName: "app.js",
+                        lineNumber: 46,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
+                        resName: "Dominos Pizza",
+                        cuisine: "Italian, Pizza"
+                    }, void 0, false, {
+                        fileName: "app.js",
+                        lineNumber: 50,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "app.js",
+                lineNumber: 45,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "app.js",
+        lineNumber: 43,
+        columnNumber: 5
+    }, undefined);
+};
+_c2 = Body;
+const Applayout = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "app",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 62,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Body, {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 63,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "app.js",
+        lineNumber: 61,
+        columnNumber: 5
+    }, undefined);
+};
+_c3 = Applayout;
+const root = (0, _clientDefault.default).createRoot(document.getElementById('root'));
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Applayout, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 41,
+    lineNumber: 70,
     columnNumber: 13
 }, undefined));
-var _c, _c1;
-$RefreshReg$(_c, "JSXHeading2");
-$RefreshReg$(_c1, "HeadingComponent");
+var _c, _c1, _c2, _c3;
+$RefreshReg$(_c, "Header");
+$RefreshReg$(_c1, "RestaurantCard");
+$RefreshReg$(_c2, "Body");
+$RefreshReg$(_c3, "Applayout");
 
   $parcel$ReactRefreshHelpers$5fe5.postlude(module);
 } finally {
