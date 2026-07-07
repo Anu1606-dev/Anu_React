@@ -42,11 +42,25 @@
   border: 1px solid #000;
 }
 
-.search {
+.res-logo {
+  width: 100%;
+}
+
+.filter {
+  margin: 10px;
+}
+
+.filter-btn {
+  cursor: pointer;
+  color: #a31e00;
+  background-color: #fcd516;
+  border: none;
+  border-radius: 5px;
   padding: 10px;
 }
 
-.res-logo {
-  width: 100%;
+.filter-btn:hover {
+  color: #fcd516;
+  background-color: #a31e00;
 }
 /*# sourceMappingURL=Anu_React.3a01df49.css.map */

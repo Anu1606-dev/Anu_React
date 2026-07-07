@@ -43,10 +43,26 @@
   border: 1px solid #000;
 }
 
-.search {
+/* .search {
   padding: 10px;
-}
+} */
 
 .res-logo {
   width: 100%;
+}
+
+.filter {
+  margin: 10px;
+}
+.filter-btn {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #fcd516;
+  color: #a31e00;
+}
+.filter-btn:hover {
+  background-color: #a31e00;
+  color: #fcd516;
 }
