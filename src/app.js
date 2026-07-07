@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import { useState } from "react";
 import Header from "./components/header";
 import Body from "./components/body";
 

@@ -1,8 +1,9 @@
 import RestaurantCard from "./restaurantCard";
+import { resList } from "../utils/mockData";
 
 const Body = () => {
   // State Variable
-  const [listOfRestaurants] = useState(resList);
+  const listOfRestaurants = resList;
 
   return (
     <div className="body">
