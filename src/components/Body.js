@@ -1,14 +1,53 @@
 import RestaurantCard from "./restaurantCard";
-import { resList } from "../utils/mockData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   // State Variable - Super powerful variable which remembers its value between function calls
-  const [listOfRestaurants, setListRestaurants] = useState(resList);
+  const [listOfRestaurants, setListRestaurants] = useState([]);
 
-  return (
+  const [searchText, setSearchText] = useState(""); // searchText is a state variable and setSearchText is a function to update the value of searchText
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.9615398&lng=79.2961468&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+
+    const json = await data.json();
+
+    console.log(json);
+
+    //optional chaining operator (?.) is used to avoid errors if any property in the chain is undefined or null
+    setListRestaurants(json?.data?.cards[2]?.data?.data?.cards);// optional chaining operator (?.) is used to avoid errors if any property in the chain is undefined or null
+  }
+  // Conditional Rendering
+  // if(listOfRestaurants.length === 0) {
+  //   return <Shimmer/>;
+  // }
+
+  return listOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input type="text" className="search-box" 
+          placeholder="Search for restaurants and food" 
+          value={searchText} 
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
+          />
+          <button 
+          onClick={() => {
+            console.log(searchText);
+          }}
+          >Search</button>
+        </div>
         <button className="filter-btn"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
@@ -22,7 +61,7 @@ const Body = () => {
       <div className="res-container">
         {listOfRestaurants.map((restaurant) => (
           <RestaurantCard
-            key={restaurant.info.id}
+            key={restaurant.data.id}
             resData={restaurant}
           />
         ))}

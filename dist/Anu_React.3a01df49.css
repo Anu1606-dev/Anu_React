@@ -25,6 +25,11 @@
   padding: 10px;
 }
 
+.login {
+  cursor: pointer;
+  padding: 0 20px;
+}
+
 .res-container {
   flex-wrap: wrap;
   display: flex;
@@ -48,6 +53,7 @@
 
 .filter {
   margin: 10px;
+  display: flex;
 }
 
 .filter-btn {
@@ -62,5 +68,18 @@
 .filter-btn:hover {
   color: #fcd516;
   background-color: #a31e00;
+}
+
+.shimmer-container {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.shimmer-card {
+  background-color: #f0f0f0;
+  width: 200px;
+  height: 400px;
+  margin: 20px;
+  padding: 5px;
 }
 /*# sourceMappingURL=Anu_React.3a01df49.css.map */
