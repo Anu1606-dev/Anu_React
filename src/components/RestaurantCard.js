@@ -30,7 +30,6 @@ const RestaurantCard = ({ resData }) => {
       />
 
       <h3>{name}</h3>
-
       {/* cuisines is an array, so join() converts it into a string */}
       <h4>{cuisines.join(", ")}</h4>
       <h4>⭐ {avgRating}</h4>
