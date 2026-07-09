@@ -1,4 +1,4 @@
-import RestaurantCard from "./restaurantCard";
+import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 
@@ -14,16 +14,14 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.9615398&lng=79.2961468&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=22.7274124&lng=88.46665860000002&carousel=true&third_party_vendor=1"
     );
 
     const json = await data.json();
 
-    console.log(json);
-
     //optional chaining operator (?.) is used to avoid errors if any property in the chain is undefined or null
-    setListRestaurants(json?.data?.cards[2]?.data?.data?.cards);// optional chaining operator (?.) is used to avoid errors if any property in the chain is undefined or null
-    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setListRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   // Conditional Rendering
   // if(listOfRestaurants.length === 0) {
@@ -56,7 +54,7 @@ const Body = () => {
         <button className="filter-btn"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
-              (res) => Number(res.info.avgRatingString) > 4.5
+              (res) => Number(res.data.avgRating) > 4.5
             );
             setListRestaurants(filteredList);
           }}>

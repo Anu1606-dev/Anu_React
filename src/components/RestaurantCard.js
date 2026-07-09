@@ -6,10 +6,13 @@ const RestaurantCard = ({ resData }) => {
     name,
     cuisines,
     cloudinaryImageId,
-    avgRatingString,
+    locality,
+    areaName,
+    avgRating,
     totalRatingsString,
     costForTwo,
-  } = resData.info;
+    sla,
+  } = resData?.data;
 
   return (
     <div
@@ -30,13 +33,12 @@ const RestaurantCard = ({ resData }) => {
 
       {/* cuisines is an array, so join() converts it into a string */}
       <h4>{cuisines.join(", ")}</h4>
-
-      <h4>⭐ {avgRatingString}</h4>
-
+      <h4>⭐ {avgRating}</h4>
       <h4>{totalRatingsString}</h4>
-
-      {/* costForTwo is stored in paise */}
-      <h4>₹{costForTwo / 100} FOR TWO</h4>
+      <h4>{locality}</h4>
+      <h4>{areaName}</h4>
+      <h4>₹{costForTwo} FOR TWO</h4>
+      <h4>Delivery Time: {sla?.slaString} </h4>
     </div>
   );
 };
