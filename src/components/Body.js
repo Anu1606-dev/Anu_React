@@ -14,8 +14,8 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=22.7274124&lng=88.46665860000002&carousel=true&third_party_vendor=1"
-    );
+      "https://corsproxy.io/?url=https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=22.7274124&lng=88.46665860000002&carousel=true&third_party_vendor=1"
+    );  // added CORS proxy to avoid CORS error while fetching data from Swiggy API
 
     const json = await data.json();
 
