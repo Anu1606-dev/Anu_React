@@ -28,7 +28,7 @@ const Header = () => {
               setBtnNameReact("Login");
             }}
           >
-            {btnName}
+            {btnNameReact}
           </button>
         </ul>
       </div>
