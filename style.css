@@ -49,6 +49,11 @@
   color: #e8760a;
 }
 
+.nav-items a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* ===== LOGIN BUTTON ===== */
 .login {
   padding: 8px 20px;
