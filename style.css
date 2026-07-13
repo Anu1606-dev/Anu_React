@@ -1,86 +1,211 @@
+/* ===== GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== HEADER ===== */
 .header {
-  border: 1px solid #000;
-  border-radius: 10px;
-  justify-content: space-between;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 80px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo {
-  width: 200px;
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
 }
 
-.nav-items {
-  padding: 0 20px;
-}
-
+/* ===== NAV ===== */
 .nav-items > ul {
-  font-size: 24px;
   list-style-type: none;
   display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .nav-items > ul > li {
   cursor: pointer;
-  margin: 10px;
-  padding: 10px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.2s ease;
+  color: #333;
 }
 
+.nav-items > ul > li:hover {
+  background-color: #f0f0f0;
+  color: #e8760a;
+}
+
+/* ===== LOGIN BUTTON ===== */
 .login {
-  padding: 0 20px;
+  padding: 8px 20px;
   cursor: pointer;
+  border-radius: 20px;
+  border: 2px solid #e8760a;
+  background-color: #fff;
+  color: #e8760a;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  margin-left: 10px;
 }
 
+.login:hover {
+  background-color: #e8760a;
+  color: #fff;
+}
+
+/* ===== FILTER / SEARCH BAR ===== */
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #eee;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.search:focus-within {
+  border-color: #e8760a;
+}
+
+.search-box {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  width: 280px;
+  background: transparent;
+  color: #333;
+}
+
+.search button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #e8760a;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search button:hover {
+  background-color: #c9620a;
+}
+
+/* ===== TOP RATED BUTTON ===== */
+.filter-btn {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 25px;
+  border: 2px solid #e8760a;
+  background-color: #fff;
+  color: #e8760a;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  background-color: #e8760a;
+  color: #fff;
+}
+
+/* ===== RESTAURANT CARDS ===== */
 .res-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: flex-start;
 }
 
 .res-card {
-  padding: 5px;
-  width: 200px;
-  height: 300px;
-  margin: 5px;
-  padding: 5px;
+  width: 220px;
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .res-card:hover {
   cursor: pointer;
-  border: 1px solid #000;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* .search {
-  padding: 10px;
-} */
-
+/* ===== IMAGE FIX ===== */
 .res-logo {
   width: 100%;
+  height: 140px;          /* fixed height so all images are same size */
+  object-fit: cover;      /* crops image to fill box without stretching */
+  display: block;
 }
 
-.filter {
-  margin: 10px;
-  display: flex;
-}
-.filter-btn {
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: none;
-  background-color: #fcd516;
-  color: #a31e00;
-}
-.filter-btn:hover {
-  background-color: #a31e00;
-  color: #fcd516;
+/* ===== CARD TEXT ===== */
+.res-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  padding: 10px 12px 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+.res-card h4 {
+  font-size: 13px;
+  color: #666;
+  padding: 2px 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== SHIMMER ===== */
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
 }
+
 .shimmer-card {
-  width: 200px;
-  height: 400px;
-  margin: 20px;
-  padding: 5px;
-  background-color: #f0f0f0;
+  width: 220px;
+  height: 280px;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
