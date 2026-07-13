@@ -7,6 +7,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import "../style.css";
+import Error from "./components/Error";
 
 /* ------------------------------ App Layout ------------------------------ */
 
@@ -23,6 +24,7 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
