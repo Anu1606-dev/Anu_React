@@ -220,3 +220,72 @@ export const resList = [
     },
   },
 ];
+
+// Menu items for specific restaurants, keyed by restaurant id
+export const menuList = {
+  "1": [
+    {
+      id: "101",
+      name: "Chicken Biryani",
+      price: 25000,
+      description: "Aromatic basmati rice cooked with tender chicken and spices",
+      isVeg: false,
+      imageId: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=300",
+    },
+    {
+      id: "102",
+      name: "Mutton Biryani",
+      price: 32000,
+      description: "Slow-cooked mutton layered with fragrant rice",
+      isVeg: false,
+      imageId: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=300",
+    },
+    {
+      id: "103",
+      name: "Veg Biryani",
+      price: 18000,
+      description: "Mixed vegetables and rice cooked with mild spices",
+      isVeg: true,
+      imageId: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=300",
+    },
+  ],
+  "2": [
+    {
+      id: "201",
+      name: "Margherita Pizza",
+      price: 22000,
+      description: "Classic pizza with tomato, mozzarella, and basil",
+      isVeg: true,
+      imageId: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300",
+    },
+    {
+      id: "202",
+      name: "Pepperoni Pizza",
+      price: 28000,
+      description: "Loaded with pepperoni and melted cheese",
+      isVeg: false,
+      imageId: "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=300",
+    },
+  ],
+  // Add more restaurant IDs here following the same pattern...
+};
+
+// Fallback menu for any restaurant that doesn't have specific items defined above
+export const defaultMenu = [
+  {
+    id: "d1",
+    name: "Chef's Special",
+    price: 20000,
+    description: "A delicious dish curated by our chef",
+    isVeg: true,
+    imageId: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300",
+  },
+  {
+    id: "d2",
+    name: "House Favorite",
+    price: 24000,
+    description: "One of our most loved dishes by regular customers",
+    isVeg: false,
+    imageId: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300",
+  },
+];

@@ -150,13 +150,20 @@
   justify-content: flex-start;
 }
 
+.res-container a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .res-card {
   width: 220px;
   background-color: #fff;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .res-card:hover {
@@ -168,8 +175,8 @@
 /* ===== IMAGE FIX ===== */
 .res-logo {
   width: 100%;
-  height: 140px;          /* fixed height so all images are same size */
-  object-fit: cover;      /* crops image to fill box without stretching */
+  height: 140px; /* fixed height so all images are same size */
+  object-fit: cover; /* crops image to fill box without stretching */
   display: block;
 }
 
@@ -211,6 +218,103 @@
 }
 
 @keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.menu {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+.menu h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.menu h3 {
+  font-weight: 500;
+  color: #686b78;
+  margin-bottom: 6px;
+}
+
+.menu > p {
+  color: #3d4152;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.menu-category {
+  margin-top: 28px;
+}
+
+.category-title {
+  font-size: 20px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e9e9eb;
+}
+
+.menu-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.menu-item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px;
+  border: 1px solid #e9e9eb;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.menu-item-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.menu-item-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  order: 2;
+}
+
+.menu-item-info {
+  flex: 1;
+  order: 1;
+}
+
+.menu-item-info h4 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  color: #1c1c1c;
+}
+
+.menu-item-price {
+  font-weight: 600;
+  font-size: 14px;
+  color: #3d4152;
+  margin: 0 0 8px 0;
+}
+
+.menu-item-desc {
+  font-size: 13px;
+  color: #93959f;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 480px;
 }
