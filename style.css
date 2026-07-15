@@ -318,3 +318,8 @@
   line-height: 1.5;
   max-width: 480px;
 }
+
+.user-card {
+  padding: 10px;
+  border: 1px solid #040404;
+}

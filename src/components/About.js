@@ -1,10 +1,33 @@
-const About = () => {
-    return (
-        <div>
-            <h1> About</h1>
-            <h2> Namaste React Series</h2>
-        </div>
-    );
-};
+import User from './User';
+import UserClass from './UserClass';
+import { Component } from 'react';
+
+class About extends Component {
+    constructor(props) {
+        super(props);
+
+        // console.log("Parent constructor called");
+    }
+
+    // async componentDidMount() {  //componentDidMount is a lifecycle method that is called after the component is mounted to the DOM. It is commonly used for making API calls, setting up subscriptions, or performing any side effects that require the component to be in the DOM.
+    //     const data = await fetch("https://api.github.com/users/Anu1606-dev");
+    //     const json = await data.json();
+    //     console.log(json);
+    // }
+
+    render() {
+        // console.log("Parent render called");
+        return (
+            <div>
+                <h1> About</h1>
+                <h2> Namaste React Series</h2>
+                {/* Using Props in Functional Component */}
+                {/* <User name={"Anushka Sarkar"} />  */}
+
+                <UserClass name={"Debangan PaulChowdhury"} location={"Kolkata"} />
+            </div>
+        );
+    }
+}
 
 export default About;
