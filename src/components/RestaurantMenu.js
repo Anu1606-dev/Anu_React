@@ -1,26 +1,16 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { resList, menuList, defaultMenu } from "../utils/mockData";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
+import { menuList, defaultMenu } from "../utils/mockData";
 import Shimmer from "./Shimmer";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
-  const [restaurant, setRestaurant] = useState(null);
+  const resInfo = useRestaurantMenu(resId); // pass resId in!
 
-  useEffect(() => {
-    setRestaurant(null);
-    const timer = setTimeout(() => {
-      const found = resList.find((res) => res.info.id === resId);
-      setRestaurant(found);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, [resId]);
-
-  if (restaurant === null) return <Shimmer />;
+  if (resInfo === null) return <Shimmer />;
 
   const { name, cuisines, avgRatingString, totalRatingsString, costForTwo } =
-    restaurant.info;
+    resInfo.info;
 
   const items = menuList[resId] || defaultMenu;
 
