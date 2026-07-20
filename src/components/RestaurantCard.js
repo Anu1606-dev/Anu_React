@@ -1,6 +1,8 @@
 import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = ({ resData }) => {
+  if (!resData?.info) return null;
+
   const {
     name,
     cuisines,
@@ -8,7 +10,7 @@ const RestaurantCard = ({ resData }) => {
     avgRatingString,
     totalRatingsString,
     costForTwo,
-  } = resData?.info;
+  } = resData.info;
 
   const imgSrc = cloudinaryImageId?.startsWith("http")
     ? cloudinaryImageId
@@ -28,6 +30,25 @@ const RestaurantCard = ({ resData }) => {
       <h4 className="text-[13px] text-gray-500 px-3 py-0.5">₹{(costForTwo / 100).toFixed(0)} for two</h4>
     </div>
   );
+};
+
+// Higher Order Component (HOC): a function that takes a component as an argument and returns a new component. HOCs add extra functionality to a component without modifying the original component's source.
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props) => {
+    const { resData } = props;
+    const isPromoted = resData?.info?.promoted;
+
+    return (
+      <div className="relative">
+        {isPromoted && (
+          <span className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded z-10">
+            Promoted
+          </span>
+        )}
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;
