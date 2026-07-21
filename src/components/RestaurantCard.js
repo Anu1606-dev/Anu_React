@@ -1,6 +1,8 @@
+import { useContext } from "react";
 import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = ({ resData }) => {
+
   if (!resData?.info) return null;
 
   const {

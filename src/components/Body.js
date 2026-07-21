@@ -1,9 +1,10 @@
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { resList } from "../utils/mockData";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 // Defined once, outside the component, so it isn't recreated on every render
 const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
@@ -12,6 +13,11 @@ const Body = () => {
   const [listOfRestaurants, setListRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  // Hooks must always run unconditionally, at the top, in the same order
+  // on every render — never after a conditional return.
+  const { loggedInUser, setUserInfo } = useContext(UserContext);
+  const onlineStatus = useOnlineStatus();
 
   console.log("Body Rendered", listOfRestaurants);
 
@@ -26,7 +32,6 @@ const Body = () => {
     }, 1500);
   };
 
-  const onlineStatus = useOnlineStatus();
   if (!onlineStatus) {
     return (
       <div className="text-center mt-10">
@@ -81,6 +86,19 @@ const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
+
+      <div className="px-5 py-3">
+        <label htmlFor="username" className="mr-2 font-semibold text-gray-700">
+          Username:
+        </label>
+        <input
+          id="username"
+          className="border border-black p-2"
+          value={loggedInUser || ""}
+          onChange={(e) => setUserInfo(e.target.value)}
+        />
+      </div>
+
       <div className="flex flex-wrap gap-5 p-5 justify-start">
         {filteredRestaurants.map((restaurant) => (
           <Link
