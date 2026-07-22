@@ -1,4 +1,13 @@
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
+
 const ItemList = ({ items }) => {
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    dispatch(addItem(item));
+  };
+
   return (
     <div className="flex flex-col gap-4">
       {items.map((item) => (
@@ -20,11 +29,19 @@ const ItemList = ({ items }) => {
             <p className="text-[13px] text-[#93959f] leading-relaxed max-w-120">{item.description}</p>
           </div>
 
-          <img
-            className="w-25 h-25 object-cover rounded-[10px] shrink-0 order-2"
-            src={item.imageId}
-            alt={item.name}
-          />
+          <div className="relative order-2 shrink-0 w-25">
+            <img
+              className="w-25 h-25 object-cover rounded-[10px]"
+              src={item.imageId}
+              alt={item.name}
+            />
+            <button
+              onClick={() => handleAddItem(item)}
+              className="absolute left-1/2 -translate-x-1/2 -bottom-3 px-4 py-1.5 bg-white border border-[#e9e9eb] rounded-lg shadow-md text-sm font-bold text-green-700 cursor-pointer transition-colors duration-200 hover:bg-green-50 whitespace-nowrap"
+            >
+              + ADD
+            </button>
+          </div>
         </div>
       ))}
     </div>

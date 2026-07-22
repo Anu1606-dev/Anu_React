@@ -10,6 +10,8 @@ import Cart from "./components/Cart";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 // import Grocery from "./components/Grocery";
 
 /* ------------------------------ App Layout ------------------------------ */
@@ -28,51 +30,53 @@ const AppLayout = () => {
   }, []); // <-- empty dependency array: run only once, on mount
 
   return (
-    <UserContext.Provider value={{ loggedInUser: userInfo, setUserInfo }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userInfo, setUserInfo }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
-const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <AppLayout />,
-    errorElement: <Error />,
-    children: [
+      const appRouter = createBrowserRouter([
       {
         path: "/",
-        element: <Body />,
+      element: <AppLayout />,
+      errorElement: <Error />,
+      children: [
+      {
+        path: "/",
+      element: <Body />,
       },
       {
         path: "/about",
-        element: <About />,
+      element: <About />,
       },
       {
         path: "/contact",
-        element: <Contact />,
+      element: <Contact />,
       },
       {
         path: "/cart",
-        element: <Cart />,
+      element: <Cart />,
       },
       {
         path: "/grocery",
-        element: <Suspense fallback={<h1>Loading...</h1>}><Grocery /></Suspense>,
+      element: <Suspense fallback={<h1>Loading...</h1>}><Grocery /></Suspense>,
       },
       {
         path: "/restaurant/:resId",
-        element: <RestaurantMenu />,
+      element: <RestaurantMenu />,
       }
-    ],
+      ],
   },
-]);
+      ]);
 
-/* ------------------------------ React Root ------------------------------ */
+      /* ------------------------------ React Root ------------------------------ */
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+      const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<RouterProvider router={appRouter} />);
+      root.render(<RouterProvider router={appRouter} />);

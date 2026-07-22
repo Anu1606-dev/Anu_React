@@ -3,11 +3,16 @@ import { Link } from "react-router-dom";
 import { LOGO_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux"; // Selector Hook
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
   const onlineStatus = useOnlineStatus();
   const { loggedInUser } = useContext(UserContext);
+
+  // Selector -> Hook in react and we will use it to get the data from the store
+  const cartItems = useSelector((store) => store.cart.items); // subscribing to the store using Selector
+
 
   return (
     <div className="flex justify-between items-center px-5 h-20 bg-white shadow-md sticky top-0 z-50">
@@ -35,7 +40,7 @@ const Header = () => {
             <Link className="no-underline text-inherit" to="/grocery">Grocery</Link>
           </li>
           <li className="cursor-pointer px-4 py-2 rounded-full transition-colors duration-200 text-gray-800 hover:bg-gray-100 hover:text-[#e8760a]">
-            <Link className="no-underline text-inherit" to="/cart">Cart</Link>
+            <Link className="no-underline text-inherit font-bold text-xl" to="/cart">Cart ({cartItems.length})</Link>
           </li>
           <button
             className="px-5 py-2 ml-2 cursor-pointer rounded-full border-2 border-[#e8760a] bg-white text-[#e8760a] text-[15px] font-semibold transition-all duration-200 hover:bg-[#e8760a] hover:text-white"
