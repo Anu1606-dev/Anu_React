@@ -15,6 +15,8 @@ import appStore from "../../utils/appStore";
 // (harmless, but noisy in test output). Passing this silences them.
 const routerFutureFlags = { v7_startTransition: true, v7_relativeSplatPath: true };
 
+// UNIT TESTING
+
 describe("Header component test cases", () => {
     // Test 1: basic render check — does the Header show a "Login" button
     // by default (before any click happens)?

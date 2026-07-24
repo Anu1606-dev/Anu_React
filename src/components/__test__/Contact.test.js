@@ -2,6 +2,8 @@ import { render, screen } from "@testing-library/react";
 import Contact from "../Contact";
 import "@testing-library/jest-dom";
 
+// UNIT TESTING
+
 describe("Contact Us page test cases", () => { // grouping related tests
     // we can write "test" or "it" for writing test cases
     it("should render Contact component without crashing", () => {
