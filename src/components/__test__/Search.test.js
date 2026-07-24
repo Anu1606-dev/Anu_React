@@ -5,6 +5,8 @@ import "@testing-library/jest-dom";
 import Body from "../Body";
 import appStore from "../../utils/appStore";
 
+// INTEGRATION TESTING
+
 // Same future flags used in Header.test.js — silences React Router's v7
 // deprecation warnings, no functional effect on the tests.
 const routerFutureFlags = { v7_startTransition: true, v7_relativeSplatPath: true };
